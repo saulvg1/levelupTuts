@@ -1,5 +1,6 @@
 //imports
 import Nav from './Nav.js';
+import styles from '../styles/Home.module.css';
 //component imports
 import Head from 'next/head';
 const Layout = ({ children }) => {
@@ -10,7 +11,7 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 };

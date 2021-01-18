@@ -59,4 +59,3 @@ const initApolloClient = (initialState = {}) => {
   });
   return client;
 };
-// added to repo 1/16
