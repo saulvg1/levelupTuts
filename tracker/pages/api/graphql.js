@@ -1,4 +1,5 @@
 import { ApolloServer, gql } from 'apollo-server-micro';
+import '../../lib/mongoose.js';
 
 const typeDefs = gql`
   type Query {
