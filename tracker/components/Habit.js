@@ -1,15 +1,32 @@
 //component imports
 import HabitButton from './HabitButton';
-const Habit = ({ habit }) => {
+const colors = ['#718096', '#f56565', '#f6e05e', '#68d391', '#63b3ed'];
+
+const Habit = ({ habit, index }) => {
   const dates = getLast5Days();
+
   return (
     <article>
-      <h3>{habit}</h3>
-      <div>
+      <h3 style={{ borderColor: colors[index] }}>{habit}</h3>
+      <div className="buttons">
         {dates.map((date) => (
-          <HabitButton key={date.getMilliseconds()} date={date} />
+          <HabitButton key={date.getTime()} date={date} />
         ))}
       </div>
+      <style jsx>{`
+        article {
+          padding: 20px;
+          border-radius: 15px;
+          box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+          border-bottom: solid 4px ${colors[index]};
+          margin-top: 0;
+        }
+        .buttons {
+          display: flex;
+        }
+      `}</style>
     </article>
   );
 };
